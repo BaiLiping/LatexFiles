@@ -30,42 +30,53 @@
 
 %------------------------------------------------
 %------------------------------------------------
-
-\begin{frame}{Measurement-Track association NOT a performance constraint}
+\begin{frame}{Literature Review}
+\begin{block}{Measurement-Track association NOT a performance constraint}
     People who study computer vision are aware of the techniques provided by the fusion community, yet they choose not to use any because the association step is \textbf{NOT} 
     a performance constraint as of now.
+\end{block}
 \end{frame}
 
-\begin{frame}{Measurement-Track association NOT a performance constraint}
+\begin{frame}{Literature Review}
+\begin{block}{Measurement-Track association NOT a performance constraint}
     \begin{figure}
     \includegraphics[width=0.9\linewidth]{DA/2.png}
     \end{figure}
+\end{block}
 \end{frame}
 
-\begin{frame}{Measurement-Track association NOT a performance constraint}
+\begin{frame}{Literature Review}
+\begin{block}{Measurement-Track association NOT a performance constraint}
     \begin{figure}
     \includegraphics[width=0.9\linewidth]{DA/3.png}
     \end{figure}
+\end{block}
 \end{frame}
 
-\begin{frame}{Measurement-Track association NOT a performance constraint}
+\begin{frame}{Literature Review}
+\begin{block}{Measurement-Track association NOT a performance constraint}
     \begin{figure}
     \includegraphics[width=0.9\linewidth]{DA/4.png}
     \end{figure}
+\end{block}
 \end{frame}
 
-\begin{frame}{how to kill a tracklet}
+\begin{frame}{Literature Review}
+\begin{block}{how to kill a tracklet}
     Quite a lot teams are investigating the issue of when to die.
     \begin{figure}
     \includegraphics[width=0.4\linewidth]{termination/1.png}
     \end{figure}
+\end{block}
 \end{frame}
 
-\begin{frame}{how to kill a tracklet}
+\begin{frame}{Literature Review}
+\begin{block}{how to kill a tracklet}
     
     \begin{figure}
     \includegraphics[width=0.9\linewidth]{termination/2.png}
     \end{figure}
+\end{block}
 \end{frame}
 
 \begin{frame}{PMBM adjustment}
@@ -81,7 +92,9 @@
 
 \begin{frame}{PMBM adjustment}
     Add new Gaussian to the mixture (which represent the poisson intensity). This birth process is driven by
-    measurements. Each measurement induce 3 birth of the same class by adding noise (uniformly distributed )
+    measurements. Each measurement induce 3 birth of the same class by adding noise (uniformly distributed)
+    \href{https://github.com/quan-dao/pmbm-filter/blob/5cdf8b31665f1a7008afa963c1ab7c3b048b5856/poisson.py}{\beamergotobutton{repository}}
+
     \begin{figure}
         \includegraphics[width=0.9\linewidth]{pmbm/1.png}
     \end{figure}
