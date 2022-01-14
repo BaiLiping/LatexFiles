@@ -1,0 +1,104 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{NuScenes Based Tracking Project Status Report} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\date{\today} % Date, can be changed to a custom date
+
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+%------------------------------------------------
+%------------------------------------------------
+
+\begin{frame}{Measurement-Track association NOT a performance constraint}
+    People who study computer vision are aware of the techniques provided by the fusion community, yet they choose not to use any because the association step is \textbf{NOT} 
+    a performance constraint as of now.
+\end{frame}
+
+\begin{frame}{Measurement-Track association NOT a performance constraint}
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{DA/2.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Measurement-Track association NOT a performance constraint}
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{DA/3.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Measurement-Track association NOT a performance constraint}
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{DA/4.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{how to kill a tracklet}
+    Quite a lot teams are investigating the issue of when to die.
+    \begin{figure}
+    \includegraphics[width=0.4\linewidth]{termination/1.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{how to kill a tracklet}
+    
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{termination/2.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{PMBM adjustment}
+    So unlike a standard PMBM filter, we incorporate the detection confidence score into the update step 
+    of \textbf{objects detected for the first time}. 
+    For detections with confidence scores larger than a threshold, 
+    we generate a potential new target by adding \textbf{a new Bernoulli process}, 
+    and plug the negative logarithm weight in the right m × m blocks diagonal in cost matrix L 
+    discussed in Section IV-C. For detections with lower confidence score, 
+    since we are not certain about their existences and require more evidences from the future, 
+    an undetected track with PPP density is generated for each of them
+\end{frame}
+
+\begin{frame}{PMBM adjustment}
+    Add new Gaussian to the mixture (which represent the poisson intensity). This birth process is driven by
+    measurements. Each measurement induce 3 birth of the same class by adding noise (uniformly distributed )
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{pmbm/1.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{RFS has a lot to contribute NOT in association but in track management}
+    \begin{itemize}
+        \item{how to strike a balance between Immortal track and Early Termination}
+        \item{silent maintanance of the tracklet}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Incorporating Detection Score provided by the detector}
+    \begin{itemize}
+        \item{two stage association}
+        \item{counters for the track}
+    \end{itemize}
+\end{frame}
+
+\end{document}
