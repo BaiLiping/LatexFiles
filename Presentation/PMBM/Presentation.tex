@@ -38,32 +38,24 @@
 \begin{frame}{implementation details for improved score}
     \begin{itemize}
         \item{tracking based on classification instead of tracking with all measurements}
-        \item{"label" for id. Previously, we used GNN for generate id, but here we used label.}
+        \item{Label for ID}
+        \item \beamergotobutton{code}
     \end{itemize}
+    \begin{figure}
+        \includegraphics[width=0.4\linewidth]{pmbm/2.png}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Key Issue}
     \begin{itemize}
         \item{false negative (missed track)}
         \begin{itemize}
-            \item{Reason 1 slow to initiate a track. It usually takes 2-5 steps to start a track. }
+            \item{Reason 1 slow to initiate a track. It usually takes 2-5 steps to start a track, depending on the parameter. }
+            \item {\beamergotobutton{demo1} and \beamergotobutton{demo2}}
             \item{Reason 2 when there is occlution, restart a track resulting in false negative. One of the key issue related to false negative is occlution. The detection might not be robust, or non-existance. Restart a track will waste valuable frame time. }
+            \item {\beamergotobutton{demo3}}
         \end{itemize}
         \item{advantage: less false positive, compare to other methods. They would initiate a track right away, regardless if that measurement is a clutter. Our approach is the 'wait and see' methods.}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{How Do I know?}
-    \begin{itemize}
-        \item{Observing the estimated state, step by step. The break point is set at estimated state, then every step i observe the estimated step.}
-        \item{Visualization. Generate the BEV of the tracking result. See demo. }
-    \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Problems to be solved}
-    \begin{itemize}
-        \item{birth}
     \end{itemize}
 \end{frame}
 
@@ -103,9 +95,14 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Literature Review}
+\begin{frame}{IMPORTANT DISCUSSION}
 \begin{block}{Measurement-Track association NOT a performance constraint for Lidar based MOT}
     \textbf{THE RESEARCH DIRECTION NEED TO BE REEVALUATED}
 \end{block}
+
+\begin{block}{PMBM based Paper publication}
+    \textbf{theoretical considerations for detection score}
+\end{block}
+
 \end{frame}
 \end{document}
