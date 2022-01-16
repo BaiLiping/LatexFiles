@@ -48,14 +48,9 @@
 
 \begin{frame}{Key Issue}
     \begin{itemize}
-        \item{false negative (missed track)}
-        \begin{itemize}
-            \item{Reason 1 slow to initiate a track. It usually takes 2-5 steps to start a track, depending on the parameter. }
-            \item {\beamergotobutton{demo1} and \beamergotobutton{demo2}}
-            \item{Reason 2 when there is occlution, restart a track resulting in false negative. One of the key issue related to false negative is occlution. The detection might not be robust, or non-existance. Restart a track will waste valuable frame time. }
-            \item {\beamergotobutton{demo3}}
-        \end{itemize}
-        \item{advantage: less false positive, compare to other methods. They would initiate a track right away, regardless if that measurement is a clutter. Our approach is the 'wait and see' methods.}
+        \item{ML: mostly lost. Only tracked for less than 20\% of the trajectory}
+        \item{MT: mostly tracked. Tracked for over 80\% of the trajectory}
+        \item{guessing: slow start for short tracks}
     \end{itemize}
 \end{frame}
 
@@ -89,7 +84,8 @@
 
 \begin{frame}{Research Plan}
     \begin{itemize}
-        \item{Systematic Analysis over the mini dataset}
+        \item{generate visualization for diagnosis}
+        \item{analysis over the Validation dataset}
         \item{find out the best parameters}
         \item{implement that parameters for testset}
     \end{itemize}
